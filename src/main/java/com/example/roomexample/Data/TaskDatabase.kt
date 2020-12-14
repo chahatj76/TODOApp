@@ -1,4 +1,4 @@
-package com.example.roomexample
+package com.example.roomexample.Data
 
 import android.content.Context
 import androidx.room.Database
@@ -20,7 +20,7 @@ abstract class TaskDatabase : RoomDatabase() {
                     context.applicationContext,
                     TaskDatabase::class.java,
                     "task_database"
-                ).build().also { instance= it }
+                ).build().also { instance = it }
 
             }
     }

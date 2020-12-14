@@ -1,10 +1,13 @@
-package com.example.roomexample
+package com.example.roomexample.UI
 
 import android.app.Application
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.Transformations
+import com.example.roomexample.Data.TaskListRepository
+import com.example.roomexample.Data.SortColumn
+import com.example.roomexample.Data.Task
 
 class TaskListViewModel(application: Application): AndroidViewModel(application) {
     private val repo: TaskListRepository = TaskListRepository(application)

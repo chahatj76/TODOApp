@@ -1,11 +1,13 @@
-package com.example.roomexample
+package com.example.roomexample.UI
 
 import android.view.*
 import androidx.core.content.ContextCompat
-import androidx.fragment.app.FragmentContainerView
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.ListAdapter
+import com.example.roomexample.Data.PriorityLevel
+import com.example.roomexample.R
+import com.example.roomexample.Data.Task
 import kotlinx.android.extensions.LayoutContainer
 import kotlinx.android.synthetic.main.list_item.*
 
@@ -14,7 +16,7 @@ class TaskAdapter(private val listener: (Long) -> Unit):
     ListAdapter<Task, TaskAdapter.ViewHolder>(DiffCallback()) {
 
     override fun onCreateViewHolder(parent: ViewGroup,
-                                    viewType: Int): TaskAdapter.ViewHolder {
+                                    viewType: Int): ViewHolder {
         val itemLayout = LayoutInflater.from(parent.context)
             .inflate(R.layout.list_item, parent, false)
 
@@ -42,7 +44,7 @@ class TaskAdapter(private val listener: (Long) -> Unit):
                         task_priority.setBackgroundColor(
                             ContextCompat.getColor(
                                 containerView.context,
-                                R.color.colorPriorityMedium
+                                    R.color.colorPriorityMedium
                             )
                         )
                     }
